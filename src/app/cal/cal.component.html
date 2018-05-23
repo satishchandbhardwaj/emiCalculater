@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Car EMI Calculator</h1>
+  <div class="">
+  	<label>Price</label><br>
+  <input id="price" name="price" type="text" [(ngModel)]="price" />
+</div>
+  <div class="">
+  	<label>Downpayment</label><br>
+  <input id="downpayment" name="downpayment" type="range" min="0" max="700000" [(ngModel)]="downpayment" step="1000" oninput="downpayment_disp.value = downpayment.value"/>
+    <output id="downpayment_disp">{{downpayment}}</output>
+</div>
+<div class="">
+	<label>Loan Period</label><br>
+  <input id="months" name="months" type="range" min="12" max="84" step="1" name="months" [(ngModel)]="months" oninput="months_disp.value = months.value"/>
+  <output id="months_disp">{{months}}</output> Months
+</div>
+<div class="">
+	<label>Bank Interest Rate</label><br>
+  <input id="interest" name="interest" type="range" min="8" max="18" name="interest" step="0.1" [(ngModel)]="interest" oninput="interest_disp.value = interest.value"/>
+  <output id="interest_disp">{{interest}}</output> %
+</div>
+<div id="result"><h2>{{total()}}</h2></div>
+
+</div>
